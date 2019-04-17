@@ -1,0 +1,2 @@
+SELECT * FROM `producto` ORDER BY `pNombre` ASC
+SELECT * FROM proveedor WHERE localidad LIKE "Quilmes"
