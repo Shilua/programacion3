@@ -1,0 +1,6 @@
+SELECT a.id, a.nombre, a.legajo, l.localidad  FROM alumno2 a, localidad l WHERE a.localidad = l.id relacion uno a uno
+SELECT a.id, a.nombre, a.legajo, l.localidad  FROM alumno2 a, localidad l WHERE a.localidad = l.id AND l.id = 1 otro filtro
+SELECT a.id, a.nombre, a.legajo, l.localidad  FROM alumno2 a, localidad l WHERE a.localidad = l.id AND l.localidad LIKE "Avellaneda" like es para comparar strings
+
+
+
