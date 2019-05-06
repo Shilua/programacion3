@@ -25,10 +25,6 @@ function consultarProveedor($get)
     while (!feof($fileReference)) {
         $string = fgets($fileReference);
         $arrayString = explode(";",$string);
-        if($arrayString[0] == "")
-        {
-            continue;
-        }
         $id = $arrayString[0];
         $nombre = $arrayString[1];
         $email = $arrayString[2];
@@ -37,6 +33,7 @@ function consultarProveedor($get)
         $proveedor->foto = $foto;
         array_push($proveedores,$proveedor);
     }
+    fclose($fileReference);
 
     foreach ($proveedores as $proveedor) {
         if($get == $proveedor->nombre)

@@ -16,7 +16,7 @@ class Proveedor
 
     public function toCSV()
     {
-        return $this->id.";".$this->nombre.";".$this->email.";".$this->foto.PHP_EOL;
+        return $this->id.";".$this->nombre.";".$this->email.";".$this->foto.";".PHP_EOL;
     }
 
     public function toString()

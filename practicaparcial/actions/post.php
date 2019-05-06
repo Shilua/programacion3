@@ -39,6 +39,6 @@
     function hacerPedido()
     {
         
-       $pedido = new Pedido($_POST['producto'],$_POST['cantidad'],$_POST['idProducto']) 
+       $pedido = new Pedido($_POST['producto'],$_POST['cantidad'],$_POST['idProducto']);
     }
     
