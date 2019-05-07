@@ -18,6 +18,11 @@ class Proveedor
     {
         return $this->id.";".$this->nombre.";".$this->email.";".$this->foto.";".PHP_EOL;
     }
+    
+    public function toJSON()
+    {
+        return json_encode($this);
+    }
 
     public function toString()
     {
