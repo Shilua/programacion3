@@ -1,0 +1,2 @@
+1;primero;2500;data/1.jpg;pedro;
+2;segundo;2500;data/2.jpg;juan;
