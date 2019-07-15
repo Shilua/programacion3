@@ -8,7 +8,7 @@
 
         public function __construct($materiaIdInput,$alumnoIdInput)
         {
-            $this->materiaId           = $materiaIdInput;
+            $this->materiaId    = $materiaIdInput;
             $this->alumnoId     = $alumnoIdInput;
 
         }

@@ -44,26 +44,53 @@
             }
         }
 
-        public static function InscribirAlumno()
+        public static function InscribirAlumno(Request $req, Response $res, $args)
         {
             $decoding = Middleware::validarToken($req,$res);
             $utipo = $decoding->data;
 
             if($utipo == "admin"){
                 $dataReceived       = $req->getParsedBody();
-                $materia = $args['id'];
+                $materia = $args['idMateria'];
                 $usuario = $dataReceived['usuarioLegajo'];
-                
                 $usuariodb = UsuarioDAO::TraerUsuario($usuario);
-                $materidb = MateriaDao::TraerMateria($materia);
+                $materiadb = MateriaDao::TraerMateriaId($materia);
                 $materiaAInscribir = $materiadb[0];
-                $usuarioAInscribir = $usuariodb;
-                if($materiaAInscribir->cupo != 0 && $usuarioAInscribir->tipo == "alumno"){
-                    $materiaAlumno = new MateriaAlumno($materiaAInscribir->id, $usuarioAInscribir->id);
+                $usuarioAInscribir = $usuariodb[0];
+                if($materiaAInscribir->cupos != 0 && $usuarioAInscribir->tipo == "alumno"){
+                    $materiaAlumno = new MateriaAlumno($materiaAInscribir->id, $usuarioAInscribir->legajo);
                     $control = AlumnoMateriaDao::insertarMAlumnoMateria($materiaAlumno);
-
+                    if ($control) {
+                        $materiaAInscribir->cupos = $materiaAInscribir->cupos -1;
+                        $control = MateriaDao::EditarMateria($materiaAInscribir);
+                        return $res->write("Alumno inscripto en la materia " . $materiaAInscribir->nombre);    
+                    }
+                    else {
+                        return $res->write("Error al inscribir el alumno");
+                    }
+                }
+                else {
+                    return $res->write("No hay cupo");
                 }
             }            
+        }
+
+        public static function mostrarMaterias(Request $req, Response $res, $args)
+        {
+            $decoding = Middleware::validarToken($req,$res);
+            $utipo = $decoding->data;
+            $ulegajo = $decoding->legajo;
+            if ($utipo = "admin") {
+                $materias = MateriaDao::TraerTodasLasMaterias();
+                return $materias;
+            }
+            elseif ($utipo = "profesor") {
+                $materia = MateriaDao::TraerMateriaIdProfesor($ulegajo);
+                return $materia->nombre;
+            }
+            else {
+                # code...
+            }
         }
     }
     

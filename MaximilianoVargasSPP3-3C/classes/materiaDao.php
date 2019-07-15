@@ -34,7 +34,7 @@
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
             
             $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM materia WHERE nombre <=>:materia");        
-            $consulta->bindValue(':materia', $materia, PDO::PARAM_INT);
+            $consulta->bindValue(':materia', $materia, PDO::PARAM_STR);
             $consulta->execute();
 
             return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
@@ -43,11 +43,26 @@
         public static function TraerMateriaId($materia)
         {    
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
-            
             $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM materia WHERE id <=>:id");        
             $consulta->bindValue(':id', $materia, PDO::PARAM_INT);
             $consulta->execute();
+            return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
+        }
 
+        public static function TraerMateriaIdProfesor($profesor)
+        {    
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM materia WHERE legajo_profesor <=>:legajo_profesor");        
+            $consulta->bindValue(':legajo_profesor', $profesor, PDO::PARAM_INT);
+            $consulta->execute();
+            return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
+        }
+        
+        public static function TraerTodasLasMaterias()
+        {
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT * FROM materia");
+            $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
         }
 
@@ -57,6 +72,19 @@
             $consulta = $objetoAccesoDato->RetornarConsulta("UPDATE materia SET legajo_profesor = :legajo_profesor WHERE id <=>:id");
             $consulta->bindValue(':id', $materia->id, PDO::PARAM_INT);
             $consulta->bindValue(':legajo_profesor', $materia->legajoProfesor, PDO::PARAM_STR);
+
+            $salida = $consulta->execute();
+
+            return $salida;
+        }
+
+        public static function EditarMateria($materia)
+        {
+            var_dump($materia);
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+            $consulta = $objetoAccesoDato->RetornarConsulta("UPDATE materia SET cupos = :cupos WHERE id <=>:id");
+            $consulta->bindValue(':id', $materia->id, PDO::PARAM_INT);
+            $consulta->bindValue(':cupos', $materia->cupos, PDO::PARAM_INT);
 
             $salida = $consulta->execute();
 
