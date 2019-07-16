@@ -48,6 +48,29 @@
             return $consulta->fetchAll(PDO::FETCH_CLASS,"usuarioDao"); 
         }
 
+        public static function TraerTodosLosUsuariosIdMateria($materia)
+        {    
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT usuario.nombre FROM usuario, materia_alumno WHERE materia_alumno.materia_id <=> :materia_id  AND materia_alumno.alumno_id = usuario.legajo");        
+            $consulta->bindValue(':materia_id', $materia, PDO::PARAM_INT);
+            $consulta->execute();
+
+            return $consulta->fetchAll(PDO::FETCH_CLASS,"usuarioDao"); 
+        }
+
+        public static function TraerTodosLosUsuariosIdMateriaIdProfesor($materia,$profesor)
+        {    
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT usuario.nombre FROM usuario, materia_alumno,materia WHERE materia_alumno.materia_id <=> :materia_id  AND materia_alumno.alumno_id = usuario.legajo AND materia.legajo_profesor <=> :legajo_profesor");        
+            $consulta->bindValue(':materia_id', $materia, PDO::PARAM_INT);
+            $consulta->bindValue(':legajo_profesor', $profesor, PDO::PARAM_INT);
+            $consulta->execute();
+
+            return $consulta->fetchAll(PDO::FETCH_CLASS,"usuarioDao"); 
+        }
+
         public static function TraerUsuario($id)
         {    
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();

@@ -79,17 +79,37 @@
         {
             $decoding = Middleware::validarToken($req,$res);
             $utipo = $decoding->data;
-            $ulegajo = $decoding->legajo;
-            if ($utipo = "admin") {
+            $ulegajo = $decoding->legajo;   
+            if ($utipo == "admin") {
                 $materias = MateriaDao::TraerTodasLasMaterias();
-                return $materias;
+                return json_encode($materias);
             }
-            elseif ($utipo = "profesor") {
+            elseif ($utipo == "profesor") {
                 $materia = MateriaDao::TraerMateriaIdProfesor($ulegajo);
-                return $materia->nombre;
+                return $materia[0]->nombre;
             }
             else {
-                # code...
+                $materias = MateriaDao::TraerTodasLasMateriasAlumno($ulegajo);
+                return json_encode($materias);
+            }
+        }
+
+        public static function mostrarMateriasId(Request $req, Response $res, $args)
+        {
+            $decoding = Middleware::validarToken($req,$res);
+            $materia = $args['id'];
+            $utipo = $decoding->data;
+            $ulegajo = $decoding->legajo;   
+            if ($utipo == "admin") {
+                $usuarios = UsuarioDao::TraerTodosLosUsuariosIdMateria($materia);
+                return json_encode($usuarios);
+            }
+            elseif ($utipo == "profesor") {
+                $usuarios = UsuarioDao::TraerTodosLosUsuariosIdMateriaIdProfesor($materia,$ulegajo);
+                return json_encode($usuarios);
+            }
+            else {
+                return "no tiene acceso";
             }
         }
     }

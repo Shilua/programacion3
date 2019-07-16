@@ -36,7 +36,8 @@
         $this->post('login[/]', UsuarioApi::class . ":loginUsuario");
         $this->post('materia[/]', MateriaApi::class . ":guardarMateria")->add($tokenMiddleWare);
         $this->post('inscripcion/{idMateria}', MateriaApi::class . ":InscribirAlumno")->add($tokenMiddleWare);
-        $this->get('materias[/]', MateriaApi::class . ":mostrarMaterias")->add($tokenMiddleWare);        
+        $this->get('materias[/]', MateriaApi::class . ":mostrarMaterias")->add($tokenMiddleWare);
+        $this->get('materias/{id}', MateriaApi::class . ":mostrarMateriasId")->add($tokenMiddleWare);        
 
     });
 

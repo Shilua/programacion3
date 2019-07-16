@@ -65,6 +65,15 @@
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
         }
+        
+        public static function TraerTodasLasMateriasAlumno($alumno)
+        {
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT materia.nombre FROM materia_alumno, materia WHERE materia.id = materia_alumno.materia_id AND materia_alumno.alumno_id <=> :alumno_id");
+            $consulta->bindValue(':alumno_id', $alumno, PDO::PARAM_INT);
+            $consulta->execute();
+            return $consulta->fetchAll(PDO::FETCH_CLASS,"materiaDao"); 
+        }
 
         public static function EditarMateriaProfesor($materia)
         {
