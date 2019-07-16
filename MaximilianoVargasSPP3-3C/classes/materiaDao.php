@@ -89,7 +89,6 @@
 
         public static function EditarMateria($materia)
         {
-            var_dump($materia);
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
             $consulta = $objetoAccesoDato->RetornarConsulta("UPDATE materia SET cupos = :cupos WHERE id <=>:id");
             $consulta->bindValue(':id', $materia->id, PDO::PARAM_INT);

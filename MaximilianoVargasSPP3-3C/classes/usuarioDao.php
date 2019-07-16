@@ -63,7 +63,7 @@
         {    
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 
-            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT usuario.nombre FROM usuario, materia_alumno,materia WHERE materia_alumno.materia_id <=> :materia_id  AND materia_alumno.alumno_id = usuario.legajo AND materia.legajo_profesor <=> :legajo_profesor");        
+            $consulta = $objetoAccesoDato->RetornarConsulta("SELECT usuario.nombre FROM usuario, materia_alumno,materia WHERE materia.id <=> :materia_id AND materia_alumno.materia_id <=> :materia_id  AND materia_alumno.alumno_id = usuario.legajo AND materia.legajo_profesor <=> :legajo_profesor");        
             $consulta->bindValue(':materia_id', $materia, PDO::PARAM_INT);
             $consulta->bindValue(':legajo_profesor', $profesor, PDO::PARAM_INT);
             $consulta->execute();
