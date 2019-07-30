@@ -1,0 +1,1388 @@
+{
+	"info": {
+		"_postman_id": "6ec3ccf0-3aae-4772-9c3a-ff5d8b69c2fd",
+		"name": "TP 000webhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "LoginEmpleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "usuario",
+									"value": "Shilua",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/login",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegistroEmpleado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NjQxOTgxMzUsIm5iZiI6MTU2NDE5ODEzNSwiZXhwIjoxNTY0MjAxNzM1LCJpZCI6MSwibm9tYnJlIjoiU2hpbHVhIiwidXN1YXJpbyI6IlNoaWx1YSIsInBlcmZpbCI6InNvY2lvIn0.ZeU83yBBwXnBvirJCWCw9rUhzef2-NngLzYG7DTy-Js",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Martin",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "martin",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "perfil",
+									"value": "mozo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/registrar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ModificarEmpleado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "joselito",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "perfil",
+									"value": "mozo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/modificar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"modificar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SuspenderEmpleado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/suspender/",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"suspender",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarEmpleado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/3",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NjQ0NTA4NDEsIm5iZiI6MTU2NDQ1MDg0MSwiZXhwIjoxNTY0NDU0NDQxLCJpZCI6MSwibm9tYnJlIjoiU2hpbHVhIiwidXN1YXJpbyI6IlNoaWx1YSIsInBlcmZpbCI6InNvY2lvIn0.qZi176JoYueMuaptFpmlUTQtCgYUJ34A0F2-_3jyLJQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/listar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Empleados entre fechas Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fecha1",
+									"value": "2018-11-18",
+									"type": "text"
+								},
+								{
+									"key": "fecha2",
+									"value": "2018-11-20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/fechasLogin",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"fechasLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cantidad operaciones por sector",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/operacionesSector",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"operacionesSector"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cantidad operaciones por sector / empleado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sector",
+									"value": "socio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/operacionesSectorEmpleado",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"operacionesSectorEmpleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cantidad operaciones empleado",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU1NzksIm5iZiI6MTU0MjY0NTU3OSwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.-i_f9HaBg_oKwLFjNsMdFDSXuAJrGN-rfVggvlMrzWo"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/empleado/operacionesEmpleado/1",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"empleado",
+								"operacionesEmpleado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "AgregarPedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjE3OTUsIm5iZiI6MTU0MjY2MTc5NSwiaWQiOjQsIm5vbWJyZSI6Ikpvc2UiLCJ1c3VhcmlvIjoiam9zZWxpdG8iLCJwZXJmaWwiOiJtb3pvIn0.dXfYsEuwwOHrCQX0E91NTofuVOeAu5-FXH7ByekT9iU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_mesa",
+									"value": "mesa03",
+									"type": "text"
+								},
+								{
+									"key": "pedido",
+									"value": "Empanadas",
+									"type": "text"
+								},
+								{
+									"key": "cantidad",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "importe",
+									"value": "80",
+									"type": "text"
+								},
+								{
+									"key": "cliente",
+									"value": "Juan Gonzalez",
+									"type": "text"
+								},
+								{
+									"key": "sector",
+									"value": "cocina",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/registrar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelarPedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjE3OTUsIm5iZiI6MTU0MjY2MTc5NSwiaWQiOjQsIm5vbWJyZSI6Ikpvc2UiLCJ1c3VhcmlvIjoiam9zZWxpdG8iLCJwZXJmaWwiOiJtb3pvIn0.dXfYsEuwwOHrCQX0E91NTofuVOeAu5-FXH7ByekT9iU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/pnp7",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"pnp7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TomarPedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2Njc3NzUsIm5iZiI6MTU0MjY2Nzc3NSwiaWQiOjcsIm5vbWJyZSI6IkVkdWFyZG8iLCJ1c3VhcmlvIjoiZWR1IiwicGVyZmlsIjoiY29jaW5lcm8ifQ.m1NQuhOpoQiwOdxnxTFTrmUe-_GA3E7JJiHhaKx0EB8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "tb660",
+									"type": "text"
+								},
+								{
+									"key": "minutosEstimados",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "mesa03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/tomarPedido",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"tomarPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido listo para servir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI3NDIwODMsIm5iZiI6MTU0Mjc0MjA4MywiaWQiOjQsIm5vbWJyZSI6Ikpvc2UiLCJ1c3VhcmlvIjoiam9zZWxpdG8iLCJwZXJmaWwiOiJtb3pvIn0.A-1Yaq34UpcPdDE3o7sjG88dkLJgI-nx7T9ansHWHas"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "dkl78",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/pedidoListo",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"pedidoListo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido servido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI3NDIwODMsIm5iZiI6MTU0Mjc0MjA4MywiaWQiOjQsIm5vbWJyZSI6Ikpvc2UiLCJ1c3VhcmlvIjoiam9zZWxpdG8iLCJwZXJmaWwiOiJtb3pvIn0.A-1Yaq34UpcPdDE3o7sjG88dkLJgI-nx7T9ansHWHas",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "47cbh",
+									"type": "text"
+								},
+								{
+									"key": "mesa",
+									"value": "mesa03",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/servirPedido",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"servirPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CobrarMesa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NzU1ODEsIm5iZiI6MTU0MjY3NTU4MSwiaWQiOjQsIm5vbWJyZSI6Ikpvc2UiLCJ1c3VhcmlvIjoiam9zZWxpdG8iLCJwZXJmaWwiOiJtb3pvIn0.FdmUpWNAzeRL2rZiJxWJ3Wo93RLmkltGsCJxnMluUyA"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigoMesa",
+									"value": "mesa03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/cobrarPedido",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"cobrarPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de pedido por user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/tiempoRestante/47cbh",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"tiempoRestante",
+								"47cbh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NjQxOTgxMzUsIm5iZiI6MTU2NDE5ODEzNSwiZXhwIjoxNTY0MjAxNzM1LCJpZCI6MSwibm9tYnJlIjoiU2hpbHVhIiwidXN1YXJpbyI6IlNoaWx1YSIsInBlcmZpbCI6InNvY2lvIn0.ZeU83yBBwXnBvirJCWCw9rUhzef2-NngLzYG7DTy-Js",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/listarTodos",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"listarTodos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mas vendido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjM3MjIsIm5iZiI6MTU0MjY2MzcyMiwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.pAEKA-C3hvgFTMHLRGGh1WjryrmqFAIlUkE_e6fDa4M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/masVendido",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"masVendido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menos vendido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjM3MjIsIm5iZiI6MTU0MjY2MzcyMiwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.pAEKA-C3hvgFTMHLRGGh1WjryrmqFAIlUkE_e6fDa4M"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/menosVendido",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"menosVendido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar fuera de tiempo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjM3MjIsIm5iZiI6MTU0MjY2MzcyMiwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.pAEKA-C3hvgFTMHLRGGh1WjryrmqFAIlUkE_e6fDa4M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/listarFueradeTiempo",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"listarFueradeTiempo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPedidosCancelados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjM3MjIsIm5iZiI6MTU0MjY2MzcyMiwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.pAEKA-C3hvgFTMHLRGGh1WjryrmqFAIlUkE_e6fDa4M"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/pedido/listarCancelados",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"pedido",
+								"listarCancelados"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "ListarMesas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/listar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegistrarMesa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "mesa06",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/registrar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarMesa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/mesa06",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"mesa06"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cerrar Mesa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDM4ODUwNDQsIm5iZiI6MTU0Mzg4NTA0NCwiZXhwIjoxNTQzODg4NjQ0LCJpZCI6OCwibm9tYnJlIjoiTHVjYXMiLCJ1c3VhcmlvIjoibHVraXRhIiwicGVyZmlsIjoiY29jaW5lcm8ifQ.IQPR6IKz12fAybaGIJGZfa3kpszSQUMlDrD5ksQIw4M"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/cerrar/mesa03",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"cerrar",
+								"mesa03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarFotoMesa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "mesa04",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/foto",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"foto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mas usada",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/masUsada",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"masUsada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menos usada",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/menosUsada",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"menosUsada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mas Facturacion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/masFacturacion",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"masFacturacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menos facturacion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/menosFacturacion",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"menosFacturacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mayor importe",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NjM3MjIsIm5iZiI6MTU0MjY2MzcyMiwiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.pAEKA-C3hvgFTMHLRGGh1WjryrmqFAIlUkE_e6fDa4M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/mayorImporte",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"mayorImporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menor importe",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/menorImporte",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"menorImporte"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Facturacion mesa entre fechas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fecha1",
+									"value": "2018-12-01",
+									"type": "text"
+								},
+								{
+									"key": "fecha2",
+									"value": "2018-12-03",
+									"type": "text"
+								},
+								{
+									"key": "codigoMesa",
+									"value": "mesa02",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/facturacionEntreFechas",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"facturacionEntreFechas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mejor puntuacion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/mejorPuntuacion",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"mejorPuntuacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Peor Puntuacion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/mesas/peorPuntuacion",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"mesas",
+								"peorPuntuacion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Encuesta",
+			"item": [
+				{
+					"name": "RegistrarEncuesta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "puntuacionMesa",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "codigoMesa",
+									"value": "mesa02",
+									"type": "text"
+								},
+								{
+									"key": "puntuacionRestaurante",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "puntuacionMozo",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "puntuacionCocinero",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "comentario",
+									"value": "Un desastre la mesa.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/encuesta/registrar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"encuesta",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarEncuesta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/encuesta/listar",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"encuesta",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facturacion",
+			"item": [
+				{
+					"name": "PDF",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/facturas/listarPDF",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"facturas",
+								"listarPDF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1NDI2NDU4MjcsIm5iZiI6MTU0MjY0NTgyNywiaWQiOjEsIm5vbWJyZSI6IlBhYmxvIiwidXN1YXJpbyI6InBhYmxvIiwicGVyZmlsIjoic29jaW8ifQ.yPIkBJ-cVzfX_Ihmt-xbzf8yZ_qjpgld0W8u661sDt0"
+							}
+						],
+						"url": {
+							"raw": "https://pruebas-shilua.000webhostapp.com/facturas/listarExcel",
+							"protocol": "https",
+							"host": [
+								"pruebas-shilua",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"facturas",
+								"listarExcel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
