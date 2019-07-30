@@ -55,7 +55,7 @@
                 $usuario = $dataReceived['usuarioLegajo'];
                 $usuariodb = UsuarioDAO::TraerUsuario($usuario);
                 $materiadb = MateriaDao::TraerMateriaId($materia);
-                $materiaAInscribir = $materiadb[0];
+                $materiaAInscribir = $materiadb[0]; 
                 $usuarioAInscribir = $usuariodb[0];
                 if($materiaAInscribir->cupos != 0 && $usuarioAInscribir->tipo == "alumno"){
                     $materiaAlumno = new MateriaAlumno($materiaAInscribir->id, $usuarioAInscribir->legajo);
@@ -70,7 +70,7 @@
                     }
                 }
                 else {
-                    return $res->write("No hay cupo");
+                    return $res->write("No hay cupo, o el id no es de un alumno");
                 }
             }            
         }
@@ -82,7 +82,11 @@
             $ulegajo = $decoding->legajo;   
             if ($utipo == "admin") {
                 $materias = MateriaDao::TraerTodasLasMaterias();
-                return json_encode($materias);
+                $materiasList = '';
+                foreach ($materias as $materia) {
+                    $materiasList = $materiasList .'<br>' . $materia->nombre;
+                }
+                return $materiasList;
             }
             elseif ($utipo == "profesor") {
                 $materia = MateriaDao::TraerMateriaIdProfesor($ulegajo);
@@ -90,7 +94,11 @@
             }
             else {
                 $materias = MateriaDao::TraerTodasLasMateriasAlumno($ulegajo);
-                return json_encode($materias);
+                $materiasList = '';
+                foreach ($materias as $materia) {
+                    $materiasList = $materiasList .'<br>' . $materia->nombre;
+                }
+                return $materiasList;
             }
         }
 
@@ -102,11 +110,19 @@
             $ulegajo = $decoding->legajo;   
             if ($utipo == "admin") {
                 $usuarios = UsuarioDao::TraerTodosLosUsuariosIdMateria($materia);
-                return json_encode($usuarios);
+                $usuariosList = '';
+                foreach ($usuarios as $usuario) {
+                    $usuariosList = $usuariosList .'<br>' . $usuario->nombre;
+                }
+                return $usuariosList;
             }
             elseif ($utipo == "profesor") {
                 $usuarios = UsuarioDao::TraerTodosLosUsuariosIdMateriaIdProfesor($materia,$ulegajo);
-                return json_encode($usuarios);
+                $usuariosList = '';
+                foreach ($usuarios as $usuario) {
+                    $usuariosList = $usuariosList .'<br>' . $usuario->nombre;
+                }
+                return $usuariosList;
             }
             else {
                 return "no tiene acceso";
